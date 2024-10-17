@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+
+<?import javafx.scene.control.Label?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.task2ing.HelloController">
+  <children>
+    <HBox spacing="80">
+      <Label text="Введите число от 1 до 4"/>
+    </HBox>
+
+    <HBox layoutX="20" layoutY="20" spacing="20">
+      <TextField fx:id="fieldSides" promptText="Enter sides"/>
+      <Button text="Нарисовать" onAction="#handleDrawButton" alignment="CENTER"/>
+    </HBox>
+    <Canvas fx:id="canvas" layoutX="50" layoutY="50" width="500" height="300" />
+  </children>
+</AnchorPane>
