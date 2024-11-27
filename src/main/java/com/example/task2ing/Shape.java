@@ -4,21 +4,19 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 public abstract class Shape {
-    private Color color;
+    protected Color color;
+    protected double size;
+    protected double x, y;
 
-    public Shape(Color color) {
+    public Shape(Color color, double size) {
         this.color = color;
+        this.size = size;
     }
 
-    public Color getColor() {
-        return color;
+    public void setPosition(double x, double y) {
+        this.x = x;
+        this.y = y;
     }
 
-    public void setColor(Color color) {
-        this.color = color;
-    }
-
-    // Абстрактные методы для рисования и получения описания фигуры
     public abstract void draw(GraphicsContext gc);
-    public abstract String descriptor();
 }

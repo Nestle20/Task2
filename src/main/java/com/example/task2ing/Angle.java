@@ -4,19 +4,15 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 public class Angle extends Shape {
-    public Angle(Color color) {
-        super(color);
+    public Angle(Color color, double size) {
+        super(color, size);
     }
 
     @Override
     public void draw(GraphicsContext gc) {
-        gc.setStroke(getColor());
-        gc.strokeLine(50, 50, 150, 50);
-        gc.strokeLine(150, 50, 150, 150);
-    }
-
-    @Override
-    public String descriptor() {
-        return "Angle";
+        gc.setStroke(color);
+        gc.setLineWidth(size);
+        gc.strokeLine(x, y, x + size, y);
+        gc.strokeLine(x + size, y, x + size, y + size);
     }
 }

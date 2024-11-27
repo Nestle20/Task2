@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.canvas.Canvas?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.HBox?>
+        <?import javafx.scene.control.ColorPicker?>
+        <?import javafx.scene.control.ListView?>
+        <?import javafx.scene.layout.BorderPane?>
+        <?import javafx.scene.canvas.Canvas?>
+        <?import javafx.scene.control.Button?>
+        <?import javafx.scene.layout.HBox?>
+        <?import javafx.scene.control.TextField?>
 
-<?import javafx.scene.control.Label?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml"
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.task2ing.HelloController">
-  <children>
-    <HBox spacing="80">
-      <Label text="Введите число от 1 до 4"/>
-    </HBox>
-
-    <HBox layoutX="20" layoutY="20" spacing="20">
-      <TextField fx:id="fieldSides" promptText="Enter sides"/>
-      <Button text="Нарисовать" onAction="#handleDrawButton" alignment="CENTER"/>
-    </HBox>
-    <Canvas fx:id="canvas" layoutX="50" layoutY="50" width="500" height="300" />
-  </children>
-</AnchorPane>
+<top>
+  <ListView fx:id="shapeListView" prefHeight="100" prefWidth="200"/>
+</top>
+<center>
+  <Canvas fx:id="canvas" width="600" height="400" onMousePressed="#onMousePressed" onMouseReleased="#onMouseReleased" onMouseDragged="#onMouseDragged"/>
+</center>
+<bottom>
+  <HBox spacing="10" alignment="center">
+    <ColorPicker fx:id="colorPicker" prefWidth="200"/>
+    <TextField fx:id="sizeInput" promptText="Размер" prefWidth="100"/>
+    <Button fx:id="clearButton" text="Очистить холст" onAction="#onClear"/>
+    <Button fx:id="undoButton" text="Отменить" onAction="#onUndo"/>
+  </HBox>
+</bottom>
+</BorderPane>

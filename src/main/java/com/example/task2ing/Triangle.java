@@ -4,18 +4,15 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 public class Triangle extends Shape {
-    public Triangle(Color color) {
-        super(color);
+    public Triangle(Color color, double size) {
+        super(color, size);
     }
 
     @Override
     public void draw(GraphicsContext gc) {
-        gc.setFill(getColor());
-        gc.fillPolygon(new double[]{100, 150, 50}, new double[]{50, 150, 150}, 3);
-    }
-
-    @Override
-    public String descriptor() {
-        return "Triangle";
+        gc.setFill(color);
+        double[] xPoints = {x, x + size, x + size / 2};
+        double[] yPoints = {y, y, y + size};
+        gc.fillPolygon(xPoints, yPoints, 3);
     }
 }

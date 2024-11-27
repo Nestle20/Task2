@@ -4,18 +4,13 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 public class Square extends Shape {
-    public Square(Color color) {
-        super(color);
+    public Square(Color color, double size) {
+        super(color, size);
     }
 
     @Override
     public void draw(GraphicsContext gc) {
-        gc.setFill(getColor());
-        gc.fillRect(50, 50, 100, 100);
-    }
-
-    @Override
-    public String descriptor() {
-        return "Square";
+        gc.setFill(color);
+        gc.fillRect(x, y, size, size);
     }
 }
