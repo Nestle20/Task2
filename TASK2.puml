@@ -1,0 +1,80 @@
+@startuml
+class com.example.task2ing.Square {
++ void draw(GraphicsContext)
+}
+
+class com.example.task2ing.HelloController {
+- Canvas canvas
+- ListView<String> shapeListView
+- TextField sizeInput
+- ColorPicker colorPicker
+- ShapeFactory shapeFactory
+- ArrayList<Shape> shapes
+- Stack<Shape> undoStack
+- PriorityQueue<String> shapeQueue
+- Map<String,Integer> shapeCountMap
+- boolean isDrawing
+- Shape currentShape
++ void initialize()
++ void onClear()
+- Shape createShapeByName(String,Color,double)
+- void showAlert(String,String)
+- void onMousePressed(MouseEvent)
+- void onMouseReleased(MouseEvent)
+- void onMouseDragged(MouseEvent)
++ void onUndo()
+- void redrawCanvas()
+}
+
+
+class com.example.task2ing.Angle {
++ void draw(GraphicsContext)
+}
+
+abstract class com.example.task2ing.Shape {
+# Color color
+# double size
+# double x
++ void setPosition(double,double)
++ {abstract}void draw(GraphicsContext)
+}
+
+
+class com.example.task2ing.Rectangle {
+- double width
+- double height
++ void draw(GraphicsContext)
+}
+
+
+class com.example.task2ing.Triangle {
++ void draw(GraphicsContext)
+}
+
+class com.example.task2ing.HelloApplication {
++ void start(Stage)
++ {static} void main(String[])
+}
+
+class com.example.task2ing.Line {
++ void draw(GraphicsContext)
+}
+
+class com.example.task2ing.ShapeFactory {
++ Shape createShape(String,Color,double)
+}
+
+class com.example.task2ing.Circle {
++ void draw(GraphicsContext)
+}
+
+
+
+com.example.task2ing.Shape <|-- com.example.task2ing.Square
+com.example.task2ing.Shape <|-- com.example.task2ing.Angle
+com.example.task2ing.Shape <|-- com.example.task2ing.Rectangle
+com.example.task2ing.Shape <|-- com.example.task2ing.Triangle
+javafx.application.Application <|-- com.example.task2ing.HelloApplication
+com.example.task2ing.Shape <|-- com.example.task2ing.Line
+com.example.task2ing.Shape <|-- com.example.task2ing.Circle
+@enduml
