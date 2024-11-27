@@ -44,6 +44,6 @@
 3. Нажмите кнопку для рисования фигуры.
 4. Фигура будет нарисована на холсте, и её название будет выведено в консоль.
 ## Демонстрация работы программы
-![Рабочее окно программы]([https://github.com/Nestle20/Task2/blob/Task2/img/screenshot.png](https://github.com/Nestle20/Task2/blob/Task2/src/2024-11-28.png?raw=true))
+![Рабочее окно программы](https://github.com/Nestle20/Task2/blob/Task2/src/2024-11-28.png?raw=true)
 ## Архитектура
-![Вывод на экран Диаграммы Классов]([https://github.com/Nestle20/Task2/blob/Task2/ClassDiagram-task2.png](https://github.com/Nestle20/Task2/blob/Task2/src/TASK2.png?raw=true))
+![Вывод на экран Диаграммы Классов](https://github.com/Nestle20/Task2/blob/Task2/src/TASK2.png?raw=true)
